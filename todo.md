@@ -45,3 +45,11 @@
 - [x] Intégrer des liens cliquables vers les réseaux sociaux (Facebook, Instagram)
 - [x] Améliorer le cadrage des motifs floraux (citrons) pour encadrer la page
 - [x] Générer des images de pâtisseries siciliennes pour la galerie
+
+
+## Modifications demandées
+- [x] Retirer les bordures d'images statiques (citrons), garder uniquement le texte
+- [x] Retirer la galerie photo
+- [x] Déplacer le QR code du menu à la fin de la page
+- [x] Ajouter des QR codes pour Facebook et Instagram
+- [x] Ajouter un texte de présentation sur la réputation de Pasticceria Giovanni en début

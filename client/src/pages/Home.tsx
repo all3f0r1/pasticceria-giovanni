@@ -1,7 +1,5 @@
 import { MenuSection } from "@/components/MenuSection";
 import { MenuItem } from "@/components/MenuItem";
-import { Gallery } from "@/components/Gallery";
-import { LemonBorder } from "@/components/LemonBorder";
 import { Coffee, Wine, Cake, UtensilsCrossed, Facebook, Instagram, QrCode } from "lucide-react";
 
 export default function Home() {
@@ -16,13 +14,10 @@ export default function Home() {
           backgroundPosition: "center"
         }}
       />
-      
-      {/* Bordures de citrons encadrant la page */}
-      <LemonBorder />
 
       <div className="container max-w-5xl py-8 md:py-12 px-4 md:px-8">
         {/* Header */}
-        <header className="text-center mb-12 mt-12 md:mt-16">
+        <header className="text-center mb-12">
           <h1 
             className="text-5xl md:text-7xl font-bold text-primary mb-4"
             style={{ fontFamily: "'Great Vibes', cursive" }}
@@ -35,38 +30,21 @@ export default function Home() {
           >
             Al vostro servizio dal 1978
           </p>
-          <div className="w-24 h-1 bg-accent mx-auto rounded-full" />
-        </header>
-
-        {/* Galerie de photos */}
-        <Gallery />
-
-        {/* QR Code Section */}
-        <div className="text-center mb-12 p-6 bg-card/50 rounded-xl backdrop-blur-sm">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <div className="flex-shrink-0">
-              <img 
-                src="/menu-qr-code.png" 
-                alt="QR Code Menu" 
-                className="w-32 h-32 md:w-40 md:h-40 rounded-lg shadow-lg"
-              />
-            </div>
-            <div className="text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                <QrCode className="w-6 h-6 text-primary" />
-                <h3 
-                  className="text-2xl font-bold text-primary"
-                  style={{ fontFamily: "'Great Vibes', cursive" }}
-                >
-                  Scannez notre menu
-                </h3>
-              </div>
-              <p className="text-muted-foreground">
-                Accédez facilement à notre menu depuis votre smartphone
-              </p>
-            </div>
+          <div className="w-24 h-1 bg-accent mx-auto mb-8 rounded-full" />
+          
+          {/* Texte de présentation */}
+          <div className="max-w-3xl mx-auto mb-8 px-4">
+            <p 
+              className="text-lg md:text-xl text-foreground/90 leading-relaxed"
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              Depuis plus de 45 ans, la <strong>Pasticceria Giovanni</strong> perpétue l'authenticité de la tradition sicilienne au cœur de Bruxelles. 
+              Réputée pour ses <em>cannoli</em> croustillants, ses <em>arancini</em> dorés et sa <em>cassata</em> légendaire, 
+              notre pâtisserie artisanale ravit les palais des connaisseurs et des amateurs de vraie cuisine italienne. 
+              Chaque création est préparée avec passion selon les recettes ancestrales de la Sicile.
+            </p>
           </div>
-        </div>
+        </header>
 
         {/* Grille de menu en 2 colonnes sur desktop */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
@@ -180,10 +158,97 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Footer avec motif céramique et réseaux sociaux */}
-        <footer className="mt-16 pt-8 border-t-2 border-primary/20 mb-16 md:mb-20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="text-center md:text-left">
+        {/* Section QR Codes à la fin */}
+        <div className="mt-16 pt-8 border-t-2 border-primary/20">
+          <h2 
+            className="text-3xl md:text-4xl font-bold text-primary text-center mb-8"
+            style={{ fontFamily: "'Great Vibes', cursive" }}
+          >
+            Scannez & Suivez-nous
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {/* QR Code Menu */}
+            <div className="text-center p-6 bg-card/50 rounded-xl backdrop-blur-sm shadow-lg">
+              <div className="flex justify-center mb-4">
+                <QrCode className="w-8 h-8 text-primary" />
+              </div>
+              <img 
+                src="/menu-qr-code.png" 
+                alt="QR Code Menu" 
+                className="w-40 h-40 mx-auto rounded-lg shadow-md mb-4"
+              />
+              <h3 
+                className="text-xl font-bold text-primary mb-2"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Notre Menu
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Accédez au menu depuis votre smartphone
+              </p>
+            </div>
+
+            {/* QR Code Facebook */}
+            <div className="text-center p-6 bg-card/50 rounded-xl backdrop-blur-sm shadow-lg">
+              <div className="flex justify-center mb-4">
+                <Facebook className="w-8 h-8 text-primary" />
+              </div>
+              <a 
+                href="https://www.facebook.com/p/Pâtisserie-Giovanni-100064813566008/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <img 
+                  src="/facebook-qr.png" 
+                  alt="QR Code Facebook" 
+                  className="w-40 h-40 mx-auto rounded-lg shadow-md mb-4 hover:scale-105 transition-transform"
+                />
+              </a>
+              <h3 
+                className="text-xl font-bold text-primary mb-2"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Facebook
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Patisserie Giovanni
+              </p>
+            </div>
+
+            {/* QR Code Instagram */}
+            <div className="text-center p-6 bg-card/50 rounded-xl backdrop-blur-sm shadow-lg">
+              <div className="flex justify-center mb-4">
+                <Instagram className="w-8 h-8 text-primary" />
+              </div>
+              <a 
+                href="https://www.instagram.com/pasticceria.giovanni/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <img 
+                  src="/instagram-qr.png" 
+                  alt="QR Code Instagram" 
+                  className="w-40 h-40 mx-auto rounded-lg shadow-md mb-4 hover:scale-105 transition-transform"
+                />
+              </a>
+              <h3 
+                className="text-xl font-bold text-primary mb-2"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Instagram
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                @pasticceria.giovanni
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-12 pt-8 border-t-2 border-primary/20 text-center">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+            <div>
               <p className="text-lg font-medium mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Chaussée de Louvain 303
               </p>
@@ -195,34 +260,6 @@ export default function Home() {
               className="w-32 h-32 bg-contain bg-center bg-no-repeat opacity-60"
               style={{ backgroundImage: "url('/sicilian-ceramic-pattern.png')" }}
             />
-            
-            <div className="text-center md:text-right">
-              <p className="font-medium mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Suivez-nous
-              </p>
-              <div className="flex gap-4 justify-center md:justify-end">
-                <a 
-                  href="https://www.facebook.com/p/Pâtisserie-Giovanni-100064813566008/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-primary hover:text-accent transition-colors"
-                >
-                  <Facebook className="w-6 h-6" />
-                  <span className="text-sm">Patisserie Giovanni</span>
-                </a>
-              </div>
-              <div className="flex gap-4 justify-center md:justify-end mt-2">
-                <a 
-                  href="https://www.instagram.com/pasticceria.giovanni/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-primary hover:text-accent transition-colors"
-                >
-                  <Instagram className="w-6 h-6" />
-                  <span className="text-sm">@pasticceria.giovanni</span>
-                </a>
-              </div>
-            </div>
           </div>
         </footer>
       </div>
