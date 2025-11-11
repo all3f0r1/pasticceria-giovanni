@@ -1,6 +1,8 @@
 import { MenuSection } from "@/components/MenuSection";
 import { MenuItem } from "@/components/MenuItem";
-import { Coffee, Wine, Cake, UtensilsCrossed } from "lucide-react";
+import { Gallery } from "@/components/Gallery";
+import { LemonBorder } from "@/components/LemonBorder";
+import { Coffee, Wine, Cake, UtensilsCrossed, Facebook, Instagram, QrCode } from "lucide-react";
 
 export default function Home() {
   return (
@@ -15,15 +17,12 @@ export default function Home() {
         }}
       />
       
-      {/* Motif citrons en haut */}
-      <div 
-        className="w-full h-24 md:h-40 bg-contain bg-center bg-no-repeat opacity-50"
-        style={{ backgroundImage: "url('/lemon-pattern.png')" }}
-      />
+      {/* Bordures de citrons encadrant la page */}
+      <LemonBorder />
 
-      <div className="container max-w-5xl pb-16">
+      <div className="container max-w-5xl py-8 md:py-12 px-4 md:px-8">
         {/* Header */}
-        <header className="text-center mb-16 -mt-6">
+        <header className="text-center mb-12 mt-12 md:mt-16">
           <h1 
             className="text-5xl md:text-7xl font-bold text-primary mb-4"
             style={{ fontFamily: "'Great Vibes', cursive" }}
@@ -31,13 +30,43 @@ export default function Home() {
             Pasticceria Giovanni
           </h1>
           <p 
-            className="text-xl md:text-2xl text-foreground/80 italic"
+            className="text-xl md:text-2xl text-foreground/80 italic mb-6"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Al vostro servizio dal 1978
           </p>
-          <div className="w-24 h-1 bg-accent mx-auto mt-4 rounded-full" />
+          <div className="w-24 h-1 bg-accent mx-auto rounded-full" />
         </header>
+
+        {/* Galerie de photos */}
+        <Gallery />
+
+        {/* QR Code Section */}
+        <div className="text-center mb-12 p-6 bg-card/50 rounded-xl backdrop-blur-sm">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+            <div className="flex-shrink-0">
+              <img 
+                src="/menu-qr-code.png" 
+                alt="QR Code Menu" 
+                className="w-32 h-32 md:w-40 md:h-40 rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                <QrCode className="w-6 h-6 text-primary" />
+                <h3 
+                  className="text-2xl font-bold text-primary"
+                  style={{ fontFamily: "'Great Vibes', cursive" }}
+                >
+                  Scannez notre menu
+                </h3>
+              </div>
+              <p className="text-muted-foreground">
+                Accédez facilement à notre menu depuis votre smartphone
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* Grille de menu en 2 colonnes sur desktop */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
@@ -151,11 +180,11 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Footer avec motif céramique */}
-        <footer className="mt-16 pt-8 border-t-2 border-primary/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        {/* Footer avec motif céramique et réseaux sociaux */}
+        <footer className="mt-16 pt-8 border-t-2 border-primary/20 mb-16 md:mb-20">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-center md:text-left">
-              <p className="text-lg font-medium" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <p className="text-lg font-medium mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Chaussée de Louvain 303
               </p>
               <p className="text-muted-foreground">1030 Schaerbeek, Bruxelles</p>
@@ -168,21 +197,35 @@ export default function Home() {
             />
             
             <div className="text-center md:text-right">
-              <p className="font-medium mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <p className="font-medium mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Suivez-nous
               </p>
-              <p className="text-sm text-muted-foreground">Facebook: Patisserie Giovanni</p>
-              <p className="text-sm text-muted-foreground">Instagram: @pasticceria.giovanni</p>
+              <div className="flex gap-4 justify-center md:justify-end">
+                <a 
+                  href="https://www.facebook.com/p/Pâtisserie-Giovanni-100064813566008/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-primary hover:text-accent transition-colors"
+                >
+                  <Facebook className="w-6 h-6" />
+                  <span className="text-sm">Patisserie Giovanni</span>
+                </a>
+              </div>
+              <div className="flex gap-4 justify-center md:justify-end mt-2">
+                <a 
+                  href="https://www.instagram.com/pasticceria.giovanni/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-primary hover:text-accent transition-colors"
+                >
+                  <Instagram className="w-6 h-6" />
+                  <span className="text-sm">@pasticceria.giovanni</span>
+                </a>
+              </div>
             </div>
           </div>
         </footer>
       </div>
-
-      {/* Motif citrons en bas */}
-      <div 
-        className="w-full h-24 md:h-40 bg-contain bg-center bg-no-repeat opacity-50 mt-12"
-        style={{ backgroundImage: "url('/lemon-pattern.png')" }}
-      />
     </div>
   );
 }

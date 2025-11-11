@@ -35,5 +35,13 @@
 - [x] Tester sur différents écrans (mobile, tablette, desktop)
 - [x] Vérifier la lisibilité de tous les textes
 - [x] Optimiser les performances
-- [ ] Créer un checkpoint
-- [ ] Livrer le menu final
+- [x] Créer un checkpoint
+- [x] Livrer le menu final
+
+
+## Nouvelles fonctionnalités demandées
+- [x] Ajouter une galerie de photos des pâtisseries siciliennes
+- [x] Créer un QR code pour accéder au menu
+- [x] Intégrer des liens cliquables vers les réseaux sociaux (Facebook, Instagram)
+- [x] Améliorer le cadrage des motifs floraux (citrons) pour encadrer la page
+- [x] Générer des images de pâtisseries siciliennes pour la galerie
