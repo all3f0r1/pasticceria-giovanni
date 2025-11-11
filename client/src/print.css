@@ -1,0 +1,42 @@
+@media print {
+  /* Optimisation pour l'impression */
+  body {
+    background: white !important;
+  }
+  
+  /* Masquer les éléments de fond pour économiser l'encre */
+  .fixed {
+    display: none !important;
+  }
+  
+  /* Ajuster les marges pour l'impression */
+  .container {
+    max-width: 100% !important;
+    padding: 1cm !important;
+  }
+  
+  /* Éviter les coupures de page au milieu des sections */
+  section {
+    page-break-inside: avoid;
+  }
+  
+  /* Ajuster les tailles de police pour l'impression */
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Réduire l'opacité des motifs décoratifs */
+  [style*="background-image"] {
+    opacity: 0.2 !important;
+  }
+  
+  /* Assurer que les couleurs sont imprimées */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
